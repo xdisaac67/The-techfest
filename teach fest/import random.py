@@ -13,8 +13,6 @@ def main(page: ft.Page):
             page.theme_mode = ft.ThemeMode.DARK
     
     def go_to_info(e):
-        page.bgcolor = ft.Colors.TRANSPARENT
-        page.decoration = ft.BoxDecoration(image=ft.DecorationImage(src="images/stars.png",fit="cover"))
         page.controls.clear()
         page.add(ft.Button("Go back", on_click=go_home),the_sun_basic,sunnie,The_solarito,solarito,the_planetaro,exio,neutronian,nutro)
     
@@ -56,7 +54,8 @@ def main(page: ft.Page):
                             " radiation, which we observe as pulsars.",size = 15, font_family = "Comic Sans Ms", color = "cyan" )
 
 #page
-    page.bgcolor = ft.Colors.BLUE_100
+    page.bgcolor = ft.Colors.TRANSPARENT
+    page.decoration = ft.BoxDecoration(image=ft.DecorationImage(src="images/stars.png",fit="cover"))
     page.scroll = ft.ScrollMode.AUTO
 
 
