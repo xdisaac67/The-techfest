@@ -11,16 +11,57 @@ def main(page: ft.Page):
             page.theme_mode = ft.ThemeMode.LIGHT
         else:
             page.theme_mode = ft.ThemeMode.DARK
+    
+    def go_to_info(e):
+        page.bgcolor = ft.Colors.TRANSPARENT
+        page.decoration = ft.BoxDecoration(image=ft.DecorationImage(src="images/stars.png",fit="cover"))
+        page.controls.clear()
+        page.add(ft.Button("Go back", on_click=go_home),the_sun_basic,sunnie,The_solarito,solarito,the_planetaro,exio,neutronian,nutro)
+    
+    def go_home(e):
+        page.controls.clear()
+        page.add(tiele, every_botton,lower) 
 
 
+#textss
+    title = ft.Text(value = "The Museum", size = 80, font_family = "Charter",color = "purple",weight = ft.FontWeight.BOLD,)
+    
+    the_sun_basic = ft.Text(value ="☀️ The Sun"
+                    "The Sun is the star at the center of our Solar System. "
+                    "It is a giant ball of hot plasma held together by gravity. "
+                    "Its core reaches 15 million °C, where hydrogen atoms fuse into "
+                    "helium and release enormous amounts of energy — the same energy "
+                    "that warms our planet and makes life on Earth possible. "
+                    "The Sun makes up 99.86% of all the mass in the Solar System.", size = 15, font_family = "Comic Sans Ms", color = "orange" )
+    
+    The_solarito = ft.Text(value ="🪐 The Solar System"
+                    "The Solar System is everything that orbits our Sun. "
+                    "It includes 8 planets, dozens of moons, and countless asteroids and comets. "
+                    "The four inner planets (Mercury, Venus, Earth, Mars) are rocky. "
+                    "The four outer planets (Jupiter, Saturn, Uranus, Neptune) are huge balls of gas or ice. "
+                    "It formed about 4.6 billion years ago from a giant cloud of dust and gas.",size = 15, font_family = "Comic Sans Ms", color = "blue" )
 
-    title = ft.Text(value = "The Museum", size = 80, font_family = "Comic Sans MS",color = "purple",weight = ft.FontWeight.BOLD,)
+    the_planetaro = ft.Text(value ="🌍 Exoplanets"
+                    "Exoplanets are planets that orbit stars other than our Sun. "
+                    "Over 5,600 have been confirmed so far! "
+                    "Some are giant gas planets bigger than Jupiter. "
+                    "Others are small rocky worlds that might have liquid water. "
+                    "Scientists are especially excited about planets in the 'habitable zone"
+                    "the right distance from their star where life could possibly exist.",size = 15, font_family = "Comic Sans Ms", color = "purple" )
+    
+    nutro = ft.Text(value ="A neutron star is the incredibly dense core left behind afte" 
+                            " a massive star explodes in a supernova." 
+                            " It is made mostly of tightly packed neutrons, so dense that a teaspoon" 
+                            " would weigh billions of tons on Earth. Neutron stars often spin rapidly and can emit beams of" 
+                            " radiation, which we observe as pulsars.",size = 15, font_family = "Comic Sans Ms", color = "cyan" )
 
 #page
     page.bgcolor = ft.Colors.BLUE_100
+    page.scroll = ft.ScrollMode.AUTO
+
 
 #buttons
-    btn = ft.Button(on_hover = animate,scale=1,animate_scale=200,
+    btn = ft.Button(on_hover = animate,scale=1,animate_scale=200,on_click=go_to_info,
         style = ft.ButtonStyle(shape=ft.RoundedRectangleBorder(radius=10),padding=0),
 
         content=ft.Column(
@@ -51,6 +92,22 @@ def main(page: ft.Page):
             [ft.Row([btn,six,],alignment=ft.MainAxisAlignment.CENTER,spacing=85,),
             eightnin],alignment=ft.MainAxisAlignment.CENTER,horizontal_alignment=ft.CrossAxisAlignment.CENTER,
             spacing=20,)
+    
+    #images
+    sunnie = ft.Container(content=ft.Image(src="images/sunnie.png", width=450, height=450),alignment=ft.Alignment.CENTER,
+    expand=True,
+)    
+    solarito = ft.Container(content=ft.Image(src="images/thesolarito.png", width=550, height=450),alignment=ft.Alignment.CENTER,
+    expand=True,)
+
+    exio = ft.Container(content=ft.Image(src="images/exio.png", width=650, height=650),alignment=ft.Alignment.CENTER,
+    expand=True,)
+
+    neutronian = ft.Container(content=ft.Image(src="images/neutronia.png", width=700, height=600),alignment=ft.Alignment.CENTER,
+    expand=True,)
+
+
+    #rows colums etc
 
     themeSwitch = ft.Switch(value=False, label="Change theme (LIGHT/DARK)",on_change = updateTheme)
 
