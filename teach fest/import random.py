@@ -7,17 +7,31 @@ def main(page: ft.Page):
         e.control.scale = 1.1 if e.data else 1.0
 
     def updateTheme(e):
-        if themeSwitch.value == True:
-            page.theme_mode = ft.ThemeMode.LIGHT
-        else:
+        if page.theme_mode == ft.ThemeMode.LIGHT:
+            page.bgcolor = ft.Colors.TRANSPARENT
             page.theme_mode = ft.ThemeMode.DARK
+            page.decoration = ft.BoxDecoration(image=ft.DecorationImage(src="images/stars.png",fit="cover"))
+
+        
+        else:
+            image=ft.DecorationImage(src="images/stars.png", fit="cover")
+            page.bgcolor = ft.Colors.TRANSPARENT
+            theme_icon = ft.Icons.LIGHT_MODE
+            page.theme_mode = ft.ThemeMode.LIGHT
+            page.decoration = ft.BoxDecoration(
+            image=ft.DecorationImage(src="images/white.png", fit="cover")
+
+        )
+
     
     def go_to_info(e):
         page.controls.clear()
-        page.add(ft.Button("Go back", on_click=go_home),the_sun_basic,sunnie,The_solarito,solarito,the_planetaro,exio,neutronian,nutro)
+        page.scroll = ft.ScrollMode.AUTO
+        page.add(ft.Button("Go back", on_click=go_home),the_sun_basic,sunnie,The_solarito,solarito,the_planetaro,exio,neutronian,nutro,lower)
     
     def go_home(e):
         page.controls.clear()
+        page.scroll = False
         page.add(tiele, every_botton,lower) 
 
 
@@ -56,7 +70,7 @@ def main(page: ft.Page):
 #page
     page.bgcolor = ft.Colors.TRANSPARENT
     page.decoration = ft.BoxDecoration(image=ft.DecorationImage(src="images/stars.png",fit="cover"))
-    page.scroll = ft.ScrollMode.AUTO
+
 
 
 #buttons
@@ -105,12 +119,13 @@ def main(page: ft.Page):
     neutronian = ft.Container(content=ft.Image(src="images/neutronia.png", width=700, height=600),alignment=ft.Alignment.CENTER,
     expand=True,)
 
+    theme_icon = ft.IconButton(icon=ft.Icons.LIGHT_MODE,
+    on_click=updateTheme
+)
+    
 
-    #rows colums etc
 
-    themeSwitch = ft.Switch(value=False, label="Change theme (LIGHT/DARK)",on_change = updateTheme)
-
-    lower = ft.Row(controls=[themeSwitch],alignment=ft.MainAxisAlignment.END)
+    lower = ft.Row(controls=[theme_icon],alignment=ft.MainAxisAlignment.END)
     tiele = ft.Row(controls = [title], alignment = ft.MainAxisAlignment.CENTER)
 
     page.add(tiele,every_botton,lower)
