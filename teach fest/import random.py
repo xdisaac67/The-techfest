@@ -11,12 +11,13 @@ def main(page: ft.Page):
             page.bgcolor = ft.Colors.TRANSPARENT
             page.theme_mode = ft.ThemeMode.DARK
             page.decoration = ft.BoxDecoration(image=ft.DecorationImage(src="images/stars.png",fit="cover"))
+            theme_icon.icon = ft.Icons.LIGHT_MODE
 
         
         else:
             image=ft.DecorationImage(src="images/stars.png", fit="cover")
             page.bgcolor = ft.Colors.TRANSPARENT
-            theme_icon = ft.Icons.LIGHT_MODE
+            theme_icon.icon = ft.Icons.DARK_MODE
             page.theme_mode = ft.ThemeMode.LIGHT
             page.decoration = ft.BoxDecoration(
             image=ft.DecorationImage(src="images/white.png", fit="cover")
@@ -108,8 +109,7 @@ def main(page: ft.Page):
     
     #images
     sunnie = ft.Container(content=ft.Image(src="images/sunnie.png", width=450, height=450),alignment=ft.Alignment.CENTER,
-    expand=True,
-)    
+    expand=True,)    
     solarito = ft.Container(content=ft.Image(src="images/thesolarito.png", width=550, height=450),alignment=ft.Alignment.CENTER,
     expand=True,)
 
@@ -120,10 +120,7 @@ def main(page: ft.Page):
     expand=True,)
 
     theme_icon = ft.IconButton(icon=ft.Icons.LIGHT_MODE,
-    on_click=updateTheme
-)
-    
-
+    on_click=updateTheme)
 
     lower = ft.Row(controls=[theme_icon],alignment=ft.MainAxisAlignment.END)
     tiele = ft.Row(controls = [title], alignment = ft.MainAxisAlignment.CENTER)
