@@ -1,6 +1,4 @@
-import asyncio
 import flet as ft
-
 def main(page: ft.Page):
 
 #function
@@ -8,8 +6,10 @@ def main(page: ft.Page):
         e.control.scale = 1.1 if e.data else 1.0
 
     def updateTheme(e):
-        
+
         if page.theme_mode == ft.ThemeMode.LIGHT:
+            page.controls.clear()
+            page.add(tiele,every_botton,lower)
             page.bgcolor = ft.Colors.TRANSPARENT
             title.color = ft.Colors.PURPLE
             page.theme_mode = ft.ThemeMode.DARK
@@ -18,27 +18,54 @@ def main(page: ft.Page):
 
         
         else:
-            image=ft.DecorationImage(src="images/stars.png", fit="cover")
-            
+            ft.DecorationImage(src="images/stars.png", fit="cover")
+            page.controls.clear()
+            page.add(tiele,every_botton_light,lower)
             page.bgcolor = ft.Colors.TRANSPARENT
             title.color = ft.Colors.WHITE_60
             theme_icon.icon = ft.Icons.DARK_MODE
             page.theme_mode = ft.ThemeMode.LIGHT
             page.decoration = ft.BoxDecoration(
-            image=ft.DecorationImage(src="images/white.png", fit="cover")
+            image=ft.DecorationImage(src="images/white.png", fit="cover"))
 
-        )
+    def updateTheme2(e):
+
+        if page.theme_mode == ft.ThemeMode.LIGHT:
+            page.bgcolor = ft.Colors.TRANSPARENT
+            title.color = ft.Colors.PURPLE
+            page.theme_mode = ft.ThemeMode.DARK
+            page.decoration = ft.BoxDecoration(image=ft.DecorationImage(src="images/stars.png",fit="cover"))
+            theme_ico.icon = ft.Icons.LIGHT_MODE
+
+        
+        else:
+            ft.DecorationImage(src="images/stars.png", fit="cover")
+            page.bgcolor = ft.Colors.TRANSPARENT
+            title.color = ft.Colors.WHITE_60
+            theme_ico.icon = ft.Icons.DARK_MODE
+            page.theme_mode = ft.ThemeMode.LIGHT
+            page.decoration = ft.BoxDecoration(
+            image=ft.DecorationImage(src="images/white.png", fit="cover"))
+            
+            
+
 
     
     def go_to_info(e):
         page.controls.clear()
         page.scroll = ft.ScrollMode.AUTO
-        page.add(ft.Button("Go back", on_click=go_home),the_sun_basic,sunnie,The_solarito,solarito,the_planetaro,exio,neutronian,nutro,lower)
+        page.add(ft.Button("Go back", on_click=go_home),the_sun_basic,sunnie,The_solarito,solarito,the_planetaro,exio,nutro,neutronian,lowie)
     
     def go_home(e):
-        page.controls.clear()
-        page.scroll = False
-        page.add(tiele, every_botton,lower) 
+        if page.theme_mode == ft.ThemeMode.LIGHT:
+            page.controls.clear()
+            page.scroll = False
+            page.add(tiele, every_botton_light,lower) 
+        
+        else:
+            page.controls.clear()
+            page.scroll = False
+            page.add(tiele, every_botton,lower) 
 
 
 #textss
@@ -85,7 +112,7 @@ def main(page: ft.Page):
 
         content=ft.Column(
             [
-                ft.Container(content=ft.Image(src="images/red.png",width=175,height=175,fit="cover"),border_radius=10,),ft.Text("0$",font_family = "Comic Sans MS")]
+                ft.Container(content=ft.Image(src="images/red.png",width=175,height=175,fit="cover"),border_radius=10,),ft.Text("0$",font_family = "Comic Sans MS",color="purple")]
                 ,alignment=ft.MainAxisAlignment.CENTER,horizontal_alignment=ft.CrossAxisAlignment.CENTER,spacing=5,),
     )
 
@@ -96,7 +123,7 @@ def main(page: ft.Page):
 
         content=ft.Column(
             [
-                ft.Container(content=ft.Image(src="images/supernova.png",width=175,height=175,fit="cover"),border_radius=10,),ft.Text("10$",font_family = "Comic Sans MS")]
+                ft.Container(content=ft.Image(src="images/supernova.png",width=175,height=175,fit="cover"),border_radius=10,),ft.Text("10$",font_family = "Comic Sans MS",color="purple")]
                 ,alignment=ft.MainAxisAlignment.CENTER,horizontal_alignment=ft.CrossAxisAlignment.CENTER,spacing=5,),)
 
     eightnin = ft.Button(on_hover = animate,scale=1,animate_scale=200,
@@ -104,12 +131,46 @@ def main(page: ft.Page):
 
         content=ft.Column(
             [
-                ft.Container(content=ft.Image(src="images/galazy.png",width=500,height=175,fit="cover"),border_radius=20,),ft.Text("Vip 20$",font_family = "Comic Sans MS")]
+                ft.Container(content=ft.Image(src="images/galazy.png",width=500,height=175,fit="cover"),border_radius=20,),ft.Text("Vip 20$",font_family = "Comic Sans MS",color = "purple")]
                 ,alignment=ft.MainAxisAlignment.CENTER,horizontal_alignment=ft.CrossAxisAlignment.CENTER,spacing=5,),)
 
     every_botton = ft.Column(
             [ft.Row([btn,six,],alignment=ft.MainAxisAlignment.CENTER,spacing=85,),
             eightnin],alignment=ft.MainAxisAlignment.CENTER,horizontal_alignment=ft.CrossAxisAlignment.CENTER,
+            spacing=20,)
+    
+    #buttons light
+    btn_light = ft.Button(on_hover = animate,scale=1,animate_scale=200,on_click=go_to_info,
+        style = ft.ButtonStyle(shape=ft.RoundedRectangleBorder(radius=10),padding=0),
+
+        content=ft.Column(
+            [
+                ft.Container(content=ft.Image(src="images/whit.png",width=175,height=175,fit="cover"),border_radius=10,),ft.Text("0$",font_family = "Comic Sans MS",color = "black")]
+                ,alignment=ft.MainAxisAlignment.CENTER,horizontal_alignment=ft.CrossAxisAlignment.CENTER,spacing=5,),)
+
+
+    six_light = ft.Button(on_hover = animate,scale=1,animate_scale=200,
+
+        style = ft.ButtonStyle(shape=ft.RoundedRectangleBorder(radius=10),padding=0,),
+        
+
+        content=ft.Column(
+            [
+                ft.Container(content=ft.Image(src="images/whitnova.png",width=175,height=175,fit="cover"),border_radius=10,),ft.Text("10$",font_family = "Comic Sans MS",color = "black")]
+                ,alignment=ft.MainAxisAlignment.CENTER,horizontal_alignment=ft.CrossAxisAlignment.CENTER,spacing=5,),)
+    
+
+    eightnin_light = ft.Button(on_hover = animate,scale=1,animate_scale=200,
+        style = ft.ButtonStyle(shape=ft.RoundedRectangleBorder(radius=20),padding=0),
+
+        content=ft.Column(
+            [
+                ft.Container(content=ft.Image(src="images/whitgala.png",width=500,height=175,fit="cover"),border_radius=20,),ft.Text("Vip 20$",font_family = "Comic Sans MS",color = "black")]
+                ,alignment=ft.MainAxisAlignment.CENTER,horizontal_alignment=ft.CrossAxisAlignment.CENTER,spacing=5,),)
+
+    every_botton_light = ft.Column(
+            [ft.Row([btn_light,six_light,],alignment=ft.MainAxisAlignment.CENTER,spacing=85,),
+            eightnin_light],alignment=ft.MainAxisAlignment.CENTER,horizontal_alignment=ft.CrossAxisAlignment.CENTER,
             spacing=20,)
     
     #images
@@ -121,13 +182,17 @@ def main(page: ft.Page):
     exio = ft.Container(content=ft.Image(src="images/exio.png", width=650, height=650),alignment=ft.Alignment.CENTER,
     expand=True,)
 
-    neutronian = ft.Container(content=ft.Image(src="images/neutronia.png", width=700, height=600),alignment=ft.Alignment.CENTER,
+    neutronian = ft.Container(content=ft.Image(src="images/neutronia.png", width=900, height=900),alignment=ft.Alignment.CENTER,
     expand=True,)
 
     theme_icon = ft.IconButton(icon=ft.Icons.LIGHT_MODE,
     on_click=updateTheme)
 
+    theme_ico = ft.IconButton(icon=ft.Icons.LIGHT_MODE,
+    on_click=updateTheme2)
+
     lower = ft.Row(controls=[theme_icon],alignment=ft.MainAxisAlignment.END)
+    lowie = ft.Row(controls=[theme_ico],alignment=ft.MainAxisAlignment.END)
     tiele = ft.Row(controls = [title], alignment = ft.MainAxisAlignment.CENTER)
 
     page.add(tiele,every_botton,lower)
