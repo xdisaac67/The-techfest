@@ -92,7 +92,7 @@ def main(page: ft.Page):
                     "Some are giant gas planets bigger than Jupiter. "
                     "Others are small rocky worlds that might have liquid water. "
                     "Scientists are especially excited about planets in the 'habitable zone"
-                    "the right distance from their star where life could possibly exist.",size = 15, font_family = "Comic Sans Ms", color = "purple" )
+                    "the right distance from their star where life could possibly exist.",size = 15, font_family = "Comic Sans Ms", color = "green" )
     
     nutro = ft.Text(value ="A neutron star is the incredibly dense core left behind afte" 
                             " a massive star explodes in a supernova." 
