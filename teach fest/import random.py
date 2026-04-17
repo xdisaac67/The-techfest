@@ -1,3 +1,4 @@
+import asyncio
 import flet as ft
 
 def main(page: ft.Page):
@@ -7,8 +8,10 @@ def main(page: ft.Page):
         e.control.scale = 1.1 if e.data else 1.0
 
     def updateTheme(e):
+        
         if page.theme_mode == ft.ThemeMode.LIGHT:
             page.bgcolor = ft.Colors.TRANSPARENT
+            title.color = ft.Colors.PURPLE
             page.theme_mode = ft.ThemeMode.DARK
             page.decoration = ft.BoxDecoration(image=ft.DecorationImage(src="images/stars.png",fit="cover"))
             theme_icon.icon = ft.Icons.LIGHT_MODE
@@ -16,7 +19,9 @@ def main(page: ft.Page):
         
         else:
             image=ft.DecorationImage(src="images/stars.png", fit="cover")
+            
             page.bgcolor = ft.Colors.TRANSPARENT
+            title.color = ft.Colors.WHITE_60
             theme_icon.icon = ft.Icons.DARK_MODE
             page.theme_mode = ft.ThemeMode.LIGHT
             page.decoration = ft.BoxDecoration(
