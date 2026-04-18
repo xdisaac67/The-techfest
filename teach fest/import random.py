@@ -54,7 +54,7 @@ def main(page: ft.Page):
     def go_to_info(e):
         page.controls.clear()
         page.scroll = ft.ScrollMode.AUTO
-        page.add(ft.Button("Go back", on_click=go_home),the_sun_basic,sunnie,The_solarito,solarito,the_planetaro,exio,nutro,neutronian,lowie)
+        page.add(the_sun_basic,sunnie,The_solarito,solarito,the_planetaro,exio,nutro,neutronian,lowie,going)
     
     def go_home(e):
         if page.theme_mode == ft.ThemeMode.LIGHT:
@@ -107,6 +107,10 @@ def main(page: ft.Page):
 
 
 #buttons
+
+
+    sixie = ft.Button("Go back", on_click=go_home)
+
     btn = ft.Button(on_hover = animate,scale=1,animate_scale=200,on_click=go_to_info,
         style = ft.ButtonStyle(shape=ft.RoundedRectangleBorder(radius=10),padding=0),
 
@@ -135,9 +139,9 @@ def main(page: ft.Page):
                 ,alignment=ft.MainAxisAlignment.CENTER,horizontal_alignment=ft.CrossAxisAlignment.CENTER,spacing=5,),)
 
     every_botton = ft.Column(
-            [ft.Row([btn,six,],alignment=ft.MainAxisAlignment.CENTER,spacing=85,),
+            [ft.Row([btn,six,],alignment=ft.MainAxisAlignment.CENTER,spacing=30,),
             eightnin],alignment=ft.MainAxisAlignment.CENTER,horizontal_alignment=ft.CrossAxisAlignment.CENTER,
-            spacing=20,)
+            spacing=15,)
     
     #buttons light
     btn_light = ft.Button(on_hover = animate,scale=1,animate_scale=200,on_click=go_to_info,
@@ -169,9 +173,13 @@ def main(page: ft.Page):
                 ,alignment=ft.MainAxisAlignment.CENTER,horizontal_alignment=ft.CrossAxisAlignment.CENTER,spacing=5,),)
 
     every_botton_light = ft.Column(
-            [ft.Row([btn_light,six_light,],alignment=ft.MainAxisAlignment.CENTER,spacing=85,),
+            [ft.Row([btn_light,six_light,],alignment=ft.MainAxisAlignment.CENTER,spacing=25,expand = True),
             eightnin_light],alignment=ft.MainAxisAlignment.CENTER,horizontal_alignment=ft.CrossAxisAlignment.CENTER,
-            spacing=20,)
+            spacing=15, expand=True)
+    
+
+
+
     
     #images
     sunnie = ft.Container(content=ft.Image(src="images/sunnie.png", width=450, height=450),alignment=ft.Alignment.CENTER,
@@ -191,6 +199,8 @@ def main(page: ft.Page):
     theme_ico = ft.IconButton(icon=ft.Icons.LIGHT_MODE,
     on_click=updateTheme2)
 
+    #rows/columns
+    going = ft.Row(controls=[sixie],alignment=ft.MainAxisAlignment.END)
     lower = ft.Row(controls=[theme_icon],alignment=ft.MainAxisAlignment.END)
     lowie = ft.Row(controls=[theme_ico],alignment=ft.MainAxisAlignment.END)
     tiele = ft.Row(controls = [title], alignment = ft.MainAxisAlignment.CENTER)
@@ -198,3 +208,4 @@ def main(page: ft.Page):
     page.add(tiele,every_botton,lower)
 
 ft.run(main, assets_dir = "assets")
+#honestly im going to wait for the teacher to do anything else
