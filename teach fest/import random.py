@@ -94,7 +94,8 @@ def main(page: ft.Page):
                     "Scientists are especially excited about planets in the 'habitable zone"
                     "the right distance from their star where life could possibly exist.",size = 15, font_family = "Comic Sans Ms", color = "green" )
     
-    nutro = ft.Text(value ="A neutron star is the incredibly dense core left behind afte" 
+    nutro = ft.Text(value ="🌠 A neutron star"
+    "                        is the incredibly dense core left behind afte" 
                             " a massive star explodes in a supernova." 
                             " It is made mostly of tightly packed neutrons, so dense that a teaspoon" 
                             " would weigh billions of tons on Earth. Neutron stars often spin rapidly and can emit beams of" 
