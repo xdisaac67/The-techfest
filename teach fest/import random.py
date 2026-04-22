@@ -199,6 +199,8 @@ def main(page: ft.Page):
 
     theme_ico = ft.IconButton(icon=ft.Icons.LIGHT_MODE,
     on_click=updateTheme2)
+    #Search Bar
+
 
     #rows/columns
     going = ft.Row(controls=[sixie],alignment=ft.MainAxisAlignment.END)
