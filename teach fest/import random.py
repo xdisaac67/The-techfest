@@ -1,4 +1,5 @@
 import flet as ft
+import flet_audio as fta
 def main(page: ft.Page):
 
 #function
@@ -63,6 +64,13 @@ def main(page: ft.Page):
         page.controls.clear()
         page.scroll = ft.ScrollMode.AUTO
         page.add(the_sun_cinco,sunnie,The_solaritos,solarito,the_planetarios,exio,neutro,neutronian,blacky,blacks,Superito,supervio,lowie,going)
+
+    
+    def go_to_info_seis_siete(e):
+        page.controls.clear()
+        page.scroll = ft.ScrollMode.AUTO
+        page.add(the_sun_tweny,sunnie,The_solarilos,solarito,the_planetarioss,exio,neutron,neutronian,blacker,blacks,Superilo,supervio,expansion,universe,timmy,timta,beginning,biggie,ending,death,lowie,going)
+    
     
     def go_home(e):
         if page.theme_mode == ft.ThemeMode.LIGHT:
@@ -242,7 +250,7 @@ def main(page: ft.Page):
                 size = 15, font_family = "Comic Sans Ms", color = "cyan" )
 
 
-    black = ft.Text(value ="🕳️ A black hole is a region in space where gravity is so strong that nothing, not even light, can escape. "
+    blacker = ft.Text(value ="🕳️ A black hole is a region in space where gravity is so strong that nothing, not even light, can escape. "
       "It forms when a massive star collapses at the end of its life, compressing its core into an extremely dense point called a singularity. "
       "Around this center is the event horizon, which marks the boundary beyond which anything that enters cannot return. "
       "Black holes can bend light and distort space and time due to their intense gravity. "
@@ -290,7 +298,7 @@ def main(page: ft.Page):
 
 
     timmy = ft.Text(value ="⏳ Time Dilation "
-                "Time dilation is a concept from Einstein’s theory of relativity. "
+                "Time dilation is a concept from Einsteins theory of relativity. "
                 "It means that time can pass at different speeds depending on gravity and motion. "
                 "The stronger the gravity, the slower time moves. "
                 "This effect becomes very noticeable near massive objects like black holes. "
@@ -321,39 +329,12 @@ def main(page: ft.Page):
                 "Each theory depends on how strong dark energy is over time. "
                 "Observations suggest the universe may keep expanding forever. "
                 "If that happens, galaxies will drift apart and space will grow increasingly empty. "
-                "Understanding the universe’s fate helps scientists learn more about its nature and laws.", 
+                "Understanding the universes fate helps scientists learn more about its nature and laws.", 
                 size = 15, font_family = "Comic Sans Ms", color = ft.Colors.BLUE_GREY_200)
                 
 
     title = ft.Text(value = "The Museum", size = 80, font_family = "Charter",color = "purple",weight = ft.FontWeight.BOLD,)
     
-    black_hole = ft.Text(value ="🕳️ Black Hole"
-                    "The black hole is one of the most extreme objects in the universe. "
-"It forms when a massive star collapses under its own gravity, creating a region where gravity is so strong that nothing, not even light, can escape. "
-"At its center lies a singularity, a point of infinite density, surrounded by an event horizon — the boundary beyond which nothing can return. "
-"Black holes can warp space and time, and their immense gravitational pull can affect nearby stars, gas, and even entire galaxies. "
-"Despite their invisible nature, black holes reveal themselves through the powerful energy and radiation produced by matter falling into them.", size = 15, font_family = "Comic Sans Ms", color = "gray" )
-    
-    The_galaxy = ft.Text(value ="🌌 Galaxy"
-                    "The Solar System is everything that orbits our Sun. "
-                    "It includes 8 planets, dozens of moons, and countless asteroids and comets. "
-                    "The four inner planets (Mercury, Venus, Earth, Mars) are rocky. "
-                    "The four outer planets (Jupiter, Saturn, Uranus, Neptune) are huge balls of gas or ice. "
-                    "It formed about 4.6 billion years ago from a giant cloud of dust and gas.",size = 15, font_family = "Comic Sans Ms", color = "purple" )
-
-    supernova = ft.Text(value ="💥 Supernova"
-                    "The supernova is a powerful explosion that marks the death of a star. "
-"It occurs when a massive star runs out of fuel and collapses, or when a white dwarf gains too much mass and undergoes a runaway nuclear reaction. "
-"This explosion releases an enormous amount of energy, briefly outshining entire galaxies and sending shockwaves through space. "
-"Supernovae create and scatter heavy elements like iron and gold, which later become part of new stars, planets, and even living organisms. "
-"These events play a crucial role in the life cycle of stars and the evolution of the universe.",size = 15, font_family = "Comic Sans Ms", color = "orange" )
-    
-    pulsar = ft.Text(value ="⚪️ Pulsar"
-    "                        is the incredibly dense core left behind afte" 
-                            " a massive star explodes in a supernova." 
-                            " It is made mostly of tightly packed neutrons, so dense that a teaspoon" 
-                            " would weigh billions of tons on Earth. Neutron stars often spin rapidly and can emit beams of" 
-                            " radiation, which we observe as pulsars.",size = 15, font_family = "Comic Sans Ms", color = "white" )
 
 #page
     page.bgcolor = ft.Colors.TRANSPARENT
@@ -387,7 +368,7 @@ def main(page: ft.Page):
                 ft.Container(content=ft.Image(src="images/supernova.png",width=175,height=175,fit="cover"),border_radius=10,),ft.Text("10$",font_family = "Comic Sans MS",color="purple")]
                 ,alignment=ft.MainAxisAlignment.CENTER,horizontal_alignment=ft.CrossAxisAlignment.CENTER,spacing=5,),)
 
-    eightnin = ft.Button(on_animation_end=animate_end,on_hover = animate,scale=1,animate_scale=200,
+    eightnin = ft.Button(on_animation_end=animate_end,on_hover = animate,scale=1,animate_scale=200,on_click=go_to_info_seis_siete,
         style = ft.ButtonStyle(shape=ft.RoundedRectangleBorder(radius=20),padding=0),
 
         content=ft.Column(
@@ -421,7 +402,7 @@ def main(page: ft.Page):
                 ,alignment=ft.MainAxisAlignment.CENTER,horizontal_alignment=ft.CrossAxisAlignment.CENTER,spacing=5,),)
     
 
-    eightnin_light = ft.Button(on_animation_end=animate_end, on_hover = animate,scale=1,animate_scale=200,
+    eightnin_light = ft.Button(on_animation_end=animate_end, on_hover = animate,scale=1,animate_scale=200,on_click = go_to_info_seis_siete,
         style = ft.ButtonStyle(shape=ft.RoundedRectangleBorder(radius=20),padding=0),
 
         content=ft.Column(
@@ -454,6 +435,18 @@ def main(page: ft.Page):
     expand=True,)
 
     supervio = ft.Container(content=ft.Image(src="images/superito.png", width=900, height=900),alignment=ft.Alignment.CENTER,
+    expand=True,)
+
+    universe = ft.Container(content=ft.Image(src="images/universe.png", width=900, height=900),alignment=ft.Alignment.CENTER,
+    expand=True,)
+
+    timta = ft.Container(content=ft.Image(src="images/timtam.png", width=900, height=900),alignment=ft.Alignment.CENTER,
+    expand=True,)
+
+    biggie = ft.Container(content=ft.Image(src="images/biggie.png", width=900, height=900),alignment=ft.Alignment.CENTER,
+    expand=True,)
+
+    death = ft.Container(content=ft.Image(src="images/death.png", width=900, height=900),alignment=ft.Alignment.CENTER,
     expand=True,)
 
     #icons
