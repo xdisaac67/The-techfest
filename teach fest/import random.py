@@ -325,6 +325,36 @@ def main(page: ft.Page):
                 size = 15, font_family = "Comic Sans Ms", color = ft.Colors.BLUE_GREY_200)
                 
 
+    title = ft.Text(value = "The Museum", size = 80, font_family = "Charter",color = "purple",weight = ft.FontWeight.BOLD,)
+    
+    black_hole = ft.Text(value ="🕳️ Black Hole"
+                    "The black hole is one of the most extreme objects in the universe. "
+"It forms when a massive star collapses under its own gravity, creating a region where gravity is so strong that nothing, not even light, can escape. "
+"At its center lies a singularity, a point of infinite density, surrounded by an event horizon — the boundary beyond which nothing can return. "
+"Black holes can warp space and time, and their immense gravitational pull can affect nearby stars, gas, and even entire galaxies. "
+"Despite their invisible nature, black holes reveal themselves through the powerful energy and radiation produced by matter falling into them.", size = 15, font_family = "Comic Sans Ms", color = "gray" )
+    
+    The_galaxy = ft.Text(value ="🌌 Galaxy"
+                    "The Solar System is everything that orbits our Sun. "
+                    "It includes 8 planets, dozens of moons, and countless asteroids and comets. "
+                    "The four inner planets (Mercury, Venus, Earth, Mars) are rocky. "
+                    "The four outer planets (Jupiter, Saturn, Uranus, Neptune) are huge balls of gas or ice. "
+                    "It formed about 4.6 billion years ago from a giant cloud of dust and gas.",size = 15, font_family = "Comic Sans Ms", color = "purple" )
+
+    supernova = ft.Text(value ="💥 Supernova"
+                    "The supernova is a powerful explosion that marks the death of a star. "
+"It occurs when a massive star runs out of fuel and collapses, or when a white dwarf gains too much mass and undergoes a runaway nuclear reaction. "
+"This explosion releases an enormous amount of energy, briefly outshining entire galaxies and sending shockwaves through space. "
+"Supernovae create and scatter heavy elements like iron and gold, which later become part of new stars, planets, and even living organisms. "
+"These events play a crucial role in the life cycle of stars and the evolution of the universe.",size = 15, font_family = "Comic Sans Ms", color = "orange" )
+    
+    pulsar = ft.Text(value ="⚪️ Pulsar"
+    "                        is the incredibly dense core left behind afte" 
+                            " a massive star explodes in a supernova." 
+                            " It is made mostly of tightly packed neutrons, so dense that a teaspoon" 
+                            " would weigh billions of tons on Earth. Neutron stars often spin rapidly and can emit beams of" 
+                            " radiation, which we observe as pulsars.",size = 15, font_family = "Comic Sans Ms", color = "white" )
+
 #page
     page.bgcolor = ft.Colors.TRANSPARENT
     page.decoration = ft.BoxDecoration(image=ft.DecorationImage(src="images/stars.png",fit="cover"))
@@ -444,3 +474,4 @@ def main(page: ft.Page):
     page.add(tiele,every_botton,lower)
 
 ft.run(main, assets_dir = "assets")
+
