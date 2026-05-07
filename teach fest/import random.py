@@ -58,18 +58,21 @@ def main(page: ft.Page):
     def go_to_info(e):
         page.controls.clear()
         page.scroll = ft.ScrollMode.AUTO
-        page.add(the_sun_basic,sunnie,The_solarito,solarito,the_planetaro,exio,nutro,neutronian,lowie,going)
+        page.window.resizable = False
+        page.add(free_deaf ,the_sun_basic,sunnie,The_solarito,solarito,the_planetaro,exio,nutro,neutronian,lowie,going)
 
     def go_to_info_cinco(e):
         page.controls.clear()
         page.scroll = ft.ScrollMode.AUTO
-        page.add(the_sun_cinco,sunnie,The_solaritos,solarito,the_planetarios,exio,neutro,neutronian,blacky,blacks,Superito,supervio,lowie,going)
+        page.window.resizable = False
+        page.add(diez_deaf,the_sun_cinco,sunnie,The_solaritos,solarito,the_planetarios,exio,neutro,neutronian,blacky,blacks,Superito,supervio,lowie,going)
 
     
     def go_to_info_seis_siete(e):
         page.controls.clear()
         page.scroll = ft.ScrollMode.AUTO
-        page.add(the_sun_tweny,sunnie,The_solarilos,solarito,the_planetarioss,exio,neutron,neutronian,blacker,blacks,Superilo,supervio,expansion,universe,timmy,timta,beginning,biggie,ending,death,lowie,going)
+        page.window.resizable = False
+        page.add(sechi_deaf,the_sun_tweny,sunnie,The_solarilos,solarito,the_planetarioss,exio,neutron,neutronian,blacker,blacks,Superilo,supervio,expansion,universe,timmy,timta,beginning,biggie,ending,death,lowie,going)
     
     
     def go_home(e):
@@ -82,6 +85,122 @@ def main(page: ft.Page):
             page.controls.clear()
             page.scroll = False
             page.add(tiele, every_botton,lower) 
+
+#audio funtions 
+
+    async def play(e):
+        await audio.play()
+    
+    async def pause(e):
+        await audio.pause()
+
+    async def resume(e):
+        await audio.resume()
+
+    async def next_song(e):
+    
+        freeer[0] = (freeer[0] + 1) % len(free)
+        audio.src = free[freeer[0]]
+        await audio.play()
+
+    async def prev_song(e):
+        freeer[0] = (freeer[0] - 1) % len(free)
+        audio.src = free[freeer[0]]
+        await audio.play()
+
+#10 dollar one
+    async def play_10(e):
+        await dies.play()
+    
+    async def pause_10(e):
+        await dies.pause()
+
+    async def resume_10(e):
+        await dies.resume()
+
+    async def next_song_10(e):
+            sir[0] = (sir[0] + 1) % len(diez)
+            dies.src = diez[sir[0]]
+            await dies.play()
+
+    async def prev_song_10(e):
+        sir[0] = (sir[0] - 1) % len(diez)
+        dies.src = diez[sir[0]]
+        await dies.play()
+
+
+#20 dollar one
+    async def play_20(e):
+        await sies.play()
+    
+    async def pause_20(e):
+        await sies.pause()
+
+    async def resume_20(e):
+        await sies.resume()
+
+    async def next_song_20(e):
+            veinte[0] = (veinte[0] + 1) % len(vinti)
+            sies.src = vinti[veinte[0]]
+            await sies.play()
+
+    async def prev_song_20(e):
+        veinte[0] = (veinte[0] - 1) % len(vinti)
+        sies.src = vinti[veinte[0]]
+        await sies.play()
+
+
+
+
+#audios
+    free = [
+        "audio/sun.mp3",
+        "audio/solarsss.mp3",
+        "audio/exoss.mp3",
+        "audio/netro.mp3",
+      
+    ]
+
+    freeer = [0]
+
+    audio = fta.Audio(src = free[freeer[0]])
+
+
+    diez = [
+        "audio/sun5.mp3",
+        "audio/solar5.mp3",
+        "audio/exo5.mp3",
+        "audio/netro5.mp3",
+        "audio/super5.mp3",
+        "audio/black.mp3"]
+
+    sir = [0]
+
+    dies = fta.Audio(src = diez[sir[0]])
+
+    vinti = [
+        "audio/sun20.mp3",
+        "audio/solar20.mp3",
+        "audio/exo20.mp3",
+        "audio/neutron20.mp3",
+        "audio/black20.mp3",
+        "audio/sup20.mp3",
+        "audio/expansion20.mp3",
+        "audio/timpo20.mp3",
+]
+    
+    veinte = [0]
+    sies = fta.Audio(src = diez[sir[0]])
+
+    page.services.append(audio)
+    page.services.append(dies)
+    page.services.append(sies)
+
+
+
+
+
+
 
 
 #textss
@@ -209,7 +328,7 @@ def main(page: ft.Page):
                 "The four outer planets (Jupiter, Saturn, Uranus, Neptune) are huge balls of gas or ice. "
                 "It formed about 4.6 billion years ago from a giant cloud of dust and gas. "
                 "Gravity keeps all these objects moving in predictable paths called orbits. "
-                "Scientists study the Solar System to understand how planets and life can form. "
+                "Scientists study the Solar System to understand how planets and life can form."
                 "The Solar System also contains dwarf planets like Pluto and Eris. "
                 "Asteroid belts and the Kuiper Belt are regions filled with rocky and icy objects. "
                 "Beyond the Kuiper Belt lies the Oort Cloud, a distant region of icy bodies. "
@@ -416,6 +535,34 @@ def main(page: ft.Page):
             spacing=15, expand=True)
     
 
+#buttons pt 2
+    player = ft.Button("play", on_click = play)
+    pausing = ft.Button("pause", on_click = pause)
+    resumin = ft.Button("resume", on_click = resume)
+    nexxie = ft.Button("next text", on_click = next_song)
+    prev = ft.Button("previous tex", on_click = prev_song)
+
+    free_deaf =ft.Row([player,pausing,resumin,nexxie,prev])
+
+    player10 = ft.Button("play", on_click = play_10)
+    pausing10 = ft.Button("pause", on_click = pause_10)
+    resumin10 = ft.Button("resume", on_click = resume_10)
+    nexxie10 = ft.Button("next text", on_click = next_song_10)
+    prev10 = ft.Button("previous tex", on_click = prev_song_10)
+
+    diez_deaf =ft.Row([player10,pausing10,resumin10,nexxie10,prev10])
+
+    player20 = ft.Button("play", on_click = play_20)
+    pausing20 = ft.Button("pause", on_click = pause_20)
+    resumin20 = ft.Button("resume", on_click = resume_20)
+    nexxie20 = ft.Button("next text", on_click = next_song_20)
+    prev20 = ft.Button("previous tex", on_click = prev_song_20)
+
+    sechi_deaf =ft.Row([player20,pausing20,resumin20,nexxie20,prev20])
+
+
+
+
 
 
     
@@ -467,4 +614,3 @@ def main(page: ft.Page):
     page.add(tiele,every_botton,lower)
 
 ft.run(main, assets_dir = "assets")
-
