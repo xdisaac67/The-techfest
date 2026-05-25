@@ -187,6 +187,10 @@ def main(page: ft.Page):
         "audio/sup20.mp3",
         "audio/expansion20.mp3",
         "audio/timpo20.mp3",
+        "audio/beggining.mp3",
+        "audio/death.mp3",
+
+
 ]
     
     veinte = [0]
